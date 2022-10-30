@@ -1,0 +1,27 @@
+<table [ngClass]="'table mx-4 w-50'">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Course</th>
+</tr>
+<tr *ngFor="let student of studentsArr">
+    <td>{{student.ID}}</td>
+    <td>{{student.Name}}</td>
+    <td>{{student.Course}}</td>
+</tr>
+</table>
+
+<input type="text" [(ngModel)]="studentsArr[0].Course" />
+
+<br/>
+
+<input type="text" [(ngModel)]="studentId" placeholder="Search" />
+
+<div [ngSwitch]="studentId">
+  <div *ngSwitchCase="1">{{studentsArr[0].Name}} - {{studentsArr[0].Course}}</div>
+  <div *ngSwitchCase="2">{{studentsArr[1].Name}} - {{studentsArr[1].Course}}</div>
+  <div *ngSwitchCase="3">{{studentsArr[2].Name}} - {{studentsArr[2].Course}}</div>
+  <div *ngSwitchCase="4">{{studentsArr[3].Name}} - {{studentsArr[3].Course}}</div>
+  <div *ngSwitchCase="5">{{studentsArr[4].Name}} - {{studentsArr[4].Course}}</div>
+  <div *ngSwitchDefault>There's no such student</div>
+</div>
